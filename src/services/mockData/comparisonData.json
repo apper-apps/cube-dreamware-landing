@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 1,
+    "feature": "Time to Market",
+    "traditional": false,
+    "freelancer": false,
+    "dreamware": true
+  },
+  {
+    "Id": 2,
+    "feature": "Predictable Costs",
+    "traditional": false,
+    "freelancer": false,
+    "dreamware": true
+  },
+  {
+    "Id": 3,
+    "feature": "Quality Assurance",
+    "traditional": true,
+    "freelancer": false,
+    "dreamware": true
+  },
+  {
+    "Id": 4,
+    "feature": "Full Ownership",
+    "traditional": true,
+    "freelancer": true,
+    "dreamware": true
+  },
+  {
+    "Id": 5,
+    "feature": "AI-Powered Development",
+    "traditional": false,
+    "freelancer": false,
+    "dreamware": true
+  },
+  {
+    "Id": 6,
+    "feature": "Proof of Concept First",
+    "traditional": false,
+    "freelancer": false,
+    "dreamware": true
+  },
+  {
+    "Id": 7,
+    "feature": "Ongoing Support",
+    "traditional": true,
+    "freelancer": false,
+    "dreamware": true
+  },
+  {
+    "Id": 8,
+    "feature": "Technical Communication",
+    "traditional": false,
+    "freelancer": false,
+    "dreamware": true
+  }
+]

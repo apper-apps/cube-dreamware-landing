@@ -1,0 +1,51 @@
+[
+  {
+    "Id": 1,
+    "number": 1,
+    "title": "Initial call",
+    "description": "Understanding your business and goals",
+    "icon": "Phone"
+  },
+  {
+    "Id": 2,
+    "number": 2,
+    "title": "Free Proof of Concept",
+    "description": "Validate and visualize before commitment",
+    "icon": "Lightbulb"
+  },
+  {
+    "Id": 3,
+    "number": 3,
+    "title": "Discovery call",
+    "description": "Map out product details and technical approach",
+    "icon": "Search"
+  },
+  {
+    "Id": 4,
+    "number": 4,
+    "title": "Design and Architecture",
+    "description": "Create foundation and system design",
+    "icon": "Layers"
+  },
+  {
+    "Id": 5,
+    "number": 5,
+    "title": "Rapid AI-Powered Development",
+    "description": "Build and test with AI tools",
+    "icon": "Zap"
+  },
+  {
+    "Id": 6,
+    "number": 6,
+    "title": "Launch and Scale",
+    "description": "Go live and grow with real users",
+    "icon": "TrendingUp"
+  },
+  {
+    "Id": 7,
+    "number": 7,
+    "title": "Ongoing support",
+    "description": "Continuous updates and growth support",
+    "icon": "Shield"
+  }
+]

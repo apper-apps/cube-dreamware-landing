@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "name": "Healthcare",
+    "icon": "Heart",
+    "description": "Patient management, telemedicine, and health tracking solutions"
+  },
+  {
+    "Id": 2,
+    "name": "Education",
+    "icon": "GraduationCap",
+    "description": "Learning platforms, course management, and educational tools"
+  },
+  {
+    "Id": 3,
+    "name": "E-commerce",
+    "icon": "ShoppingCart",
+    "description": "Online stores, inventory management, and customer experiences"
+  },
+  {
+    "Id": 4,
+    "name": "Services",
+    "icon": "Briefcase",
+    "description": "Service booking, client management, and business automation"
+  },
+  {
+    "Id": 5,
+    "name": "Real Estate & Property",
+    "icon": "Home",
+    "description": "Property listings, virtual tours, and management systems"
+  },
+  {
+    "Id": 6,
+    "name": "Finance & Fintech",
+    "icon": "DollarSign",
+    "description": "Payment processing, financial dashboards, and investment tools"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "icon": "Rocket",
+    "text": "AI-assisted development"
+  },
+  {
+    "Id": 2,
+    "icon": "Play",
+    "text": "See a demo (POC) before committing"
+  },
+  {
+    "Id": 3,
+    "icon": "Target",
+    "text": "You own everything"
+  }
+]

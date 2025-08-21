@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "quote": "As a non-technical founder, I was amazed at how Dreamware turned my idea into a working product in just weeks. Their AI-powered approach saved me months of development time.",
+    "author": "Sarah Chen",
+    "role": "Founder",
+    "company": "MedFlow"
+  },
+  {
+    "Id": 2,
+    "quote": "The proof of concept approach gave me complete confidence before investing. Now I can focus on growing my business instead of worrying about technical issues.",
+    "author": "Michael Rodriguez",
+    "role": "CEO",
+    "company": "EduConnect"
+  },
+  {
+    "Id": 3,
+    "quote": "Dreamware didn't just build our platform - they helped us understand our customers better. The AI insights were invaluable for our growth strategy.",
+    "author": "Jessica Thompson",
+    "role": "Co-founder",
+    "company": "ServiceHub"
+  },
+  {
+    "Id": 4,
+    "quote": "I went from zero technical background to launching a successful fintech platform. The ongoing support means I never feel lost or abandoned.",
+    "author": "David Park",
+    "role": "Founder",
+    "company": "PayForward"
+  }
+]
