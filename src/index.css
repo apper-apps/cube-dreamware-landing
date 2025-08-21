@@ -107,9 +107,8 @@ body {
 /* Glass morphism */
 .glass {
   background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
 }
 
 /* Button magnetic effect */
@@ -123,8 +122,8 @@ body {
 
 /* Parallax effects */
 .parallax-float {
+  animation: float 3s ease-in-out infinite;
 }
-
 @keyframes float {
   0%, 100% { 
     transform: translateY(0px) rotate(0deg);
