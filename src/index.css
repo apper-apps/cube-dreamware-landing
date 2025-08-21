@@ -156,6 +156,34 @@ backdrop-filter: blur(10px);
 .magnetic-btn:hover {
   transform: scale(1.05);
 }
+.magnetic-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Hero floating animation */
+@keyframes hero-float {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-15px);
+  }
+}
+
+.animate-hero-float {
+  animation: hero-float 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Enhanced electric blue accents */
+.electric-glow {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+}
+
+.electric-glow:hover {
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
+}
+
 /* Parallax effects */
 .parallax-float {
   animation: float 3s ease-in-out infinite;
@@ -167,8 +195,8 @@ backdrop-filter: blur(10px);
   33% { 
     transform: translateY(-10px) rotate(1deg);
   }
-  66% { 
-    transform: translateY(-5px) rotate(-1deg);
+  66% {
+    transform: translateY(5px) rotate(-1deg);
   }
 }
 
@@ -239,5 +267,5 @@ background: linear-gradient(90deg, #1A1A1A 25%, #2D2D2D 50%, #1A1A1A 75%);
 
 .section-reveal.revealed {
   opacity: 1;
-  transform: translateY(0);
+transform: translateY(0);
 }

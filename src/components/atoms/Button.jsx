@@ -53,11 +53,11 @@ const Button = forwardRef(({
     };
   }, []);
   
-  const variants = {
-    primary: "bg-accent-blue hover:bg-accent-blue/90 text-white shadow-lg hover:shadow-xl",
-    secondary: "bg-transparent border-2 border-accent-blue text-accent-blue hover:bg-accent-blue hover:text-white",
-    ghost: "bg-transparent text-white hover:bg-white/10",
-    gradient: "bg-gradient-to-r from-accent-blue to-accent-purple hover:from-accent-blue/90 hover:to-accent-purple/90 text-white shadow-lg hover:shadow-xl",
+const variants = {
+    primary: "bg-[#0EA5E9] hover:bg-[#0EA5E9]/90 text-white shadow-lg hover:shadow-xl hover:shadow-[#0EA5E9]/30 transition-all duration-300",
+    secondary: "bg-transparent border-2 border-[#0EA5E9] text-[#0EA5E9] hover:bg-[#0EA5E9] hover:text-white hover:shadow-lg hover:shadow-[#0EA5E9]/20 transition-all duration-300",
+    ghost: "bg-transparent text-white hover:bg-white/10 transition-all duration-300",
+    gradient: "bg-gradient-to-r from-[#0EA5E9] to-accent-purple hover:from-[#0EA5E9]/90 hover:to-accent-purple/90 text-white shadow-lg hover:shadow-xl transition-all duration-300",
   };
 
   const sizes = {
