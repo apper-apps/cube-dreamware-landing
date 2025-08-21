@@ -116,10 +116,14 @@ backdrop-filter: blur(10px);
   transition: transform 0.2s ease;
 }
 
+.magnetic-hover {
+  transition: transform 0.15s ease-out;
+  cursor: pointer;
+}
+
 .magnetic-btn:hover {
   transform: scale(1.05);
 }
-
 /* Parallax effects */
 .parallax-float {
   animation: float 3s ease-in-out infinite;

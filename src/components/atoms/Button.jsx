@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef, useEffect } from "react";
 import { cn } from "@/utils/cn";
 
 const Button = forwardRef(({ 
@@ -8,7 +8,50 @@ const Button = forwardRef(({
   children,
   ...props 
 }, ref) => {
-  const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 magnetic-btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-midnight disabled:pointer-events-none disabled:opacity-50";
+  const buttonRef = useRef(null);
+  const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 magnetic-btn magnetic-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-midnight disabled:pointer-events-none disabled:opacity-50";
+
+  useEffect(() => {
+    const button = buttonRef.current;
+    if (!button) return;
+
+    const handleMouseMove = (e) => {
+      const rect = button.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      const deltaX = e.clientX - centerX;
+      const deltaY = e.clientY - centerY;
+      
+      // Limit the magnetic effect to a subtle 8px maximum displacement
+      const maxDistance = 8;
+      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      const factor = Math.min(distance / 100, 1) * maxDistance / distance;
+      
+      const moveX = deltaX * factor;
+      const moveY = deltaY * factor;
+      
+      button.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+    };
+
+    const handleMouseEnter = () => {
+      button.addEventListener('mousemove', handleMouseMove);
+    };
+
+    const handleMouseLeave = () => {
+      button.removeEventListener('mousemove', handleMouseMove);
+      button.style.transform = '';
+    };
+
+    button.addEventListener('mouseenter', handleMouseEnter);
+    button.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      button.removeEventListener('mouseenter', handleMouseEnter);
+      button.removeEventListener('mouseleave', handleMouseLeave);
+      button.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
   
   const variants = {
     primary: "bg-accent-blue hover:bg-accent-blue/90 text-white shadow-lg hover:shadow-xl",
@@ -23,15 +66,19 @@ const Button = forwardRef(({
     lg: "h-14 px-10 py-4 text-lg rounded-xl",
   };
 
-  return (
+return (
     <button
+      ref={(node) => {
+        buttonRef.current = node;
+        if (typeof ref === 'function') ref(node);
+        else if (ref) ref.current = node;
+      }}
       className={cn(
         baseStyles,
         variants[variant],
         sizes[size],
         className
       )}
-      ref={ref}
       {...props}
     >
       {children}
