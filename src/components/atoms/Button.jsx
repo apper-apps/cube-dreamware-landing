@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useEffect } from "react";
+import React, { forwardRef, useEffect, useRef } from "react";
 import { cn } from "@/utils/cn";
 
 const Button = forwardRef(({ 
@@ -31,7 +31,7 @@ const Button = forwardRef(({
       const moveX = deltaX * factor;
       const moveY = deltaY * factor;
       
-      button.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+button.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.08)`;
     };
 
     const handleMouseEnter = () => {

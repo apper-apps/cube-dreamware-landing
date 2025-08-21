@@ -138,26 +138,31 @@ body {
 
 /* Glass morphism */
 .glass {
-  background: rgba(10, 10, 10, 0.7);
-backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Button magnetic effect */
 .magnetic-btn {
-  transition: transform 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .magnetic-hover {
-  transition: transform 0.15s ease-out;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  will-change: transform;
 }
 
 .magnetic-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
-.magnetic-btn:hover {
-  transform: scale(1.05);
+
+.magnetic-btn:active {
+  transform: scale(1.02);
+  transition-duration: 0.1s;
 }
 
 /* Hero floating animation */
