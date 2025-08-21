@@ -272,5 +272,61 @@ background: linear-gradient(90deg, #1A1A1A 25%, #2D2D2D 50%, #1A1A1A 75%);
 
 .section-reveal.revealed {
   opacity: 1;
-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* Testimonial carousel fade animations */
+.testimonial-fade {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.testimonial-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  z-index: 10;
+}
+
+.testimonial-inactive {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Enhanced fade transition timing */
+.testimonial-fade * {
+  transition: all 0.6s ease-out;
+}
+
+/* Smooth quote mark animation */
+.testimonial-active .text-accent-blue\/10 {
+  animation: quote-glow 0.8s ease-out;
+}
+
+@keyframes quote-glow {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  100% {
+    opacity: 0.1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Enhanced gradient text animation for testimonial authors */
+.testimonial-active .font-bold {
+  animation: text-shimmer 1s ease-out;
+}
+
+@keyframes text-shimmer {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
