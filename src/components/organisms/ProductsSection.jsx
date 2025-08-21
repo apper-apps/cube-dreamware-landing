@@ -62,75 +62,74 @@ const [error, setError] = useState("");
     );
   }
 
-  return (
-    <section className="py-20 lg:py-32 relative overflow-hidden" id="products">
+return (
+    <section className="py-20 bg-gradient-to-br from-midnight via-dark-gray to-midnight relative overflow-hidden" id="products">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-blue/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-accent-blue/5 via-transparent to-accent-purple/5" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-accent-purple/10 rounded-full blur-3xl" />
       
-      <div className="container mx-auto px-5 sm:px-10 lg:px-20 relative">
+      <div className="container mx-auto px-5 sm:px-10 lg:px-20 relative z-10">
         <div 
           ref={ref}
           className={cn(
-            "animate-in-view",
-            hasIntersected && "in-view"
+            "text-center mb-16 animate-in-view section-reveal",
+            hasIntersected && "in-view revealed"
           )}
         >
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Our <span className="gradient-text">AI-Powered</span> Solutions
-            </h2>
-            <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-              Discover our suite of intelligent tools designed to transform your business 
-              processes with cutting-edge AI technology.
-            </p>
-          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            Our <span className="gradient-text">AI-Powered Products</span>
+          </h2>
+          <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            Discover our suite of intelligent tools designed to transform your business 
+            processes with cutting-edge AI technology.
+          </p>
+        </div>
 
-          {/* Products Grid */}
-          <div className="space-y-32">
-            {products.map((product, index) => (
-              <div
-                key={product.Id}
-                className={cn(
-                  "animate-in-view",
-                  hasIntersected && "in-view"
-                )}
-                style={{ transitionDelay: `${index * 200}ms` }}
-              >
-                <ProductCard
-                  product={product}
-                  index={index}
-                  isReversed={index % 2 === 1}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className={cn(
-            "text-center mt-20 animate-in-view",
-            hasIntersected && "in-view"
-          )} style={{ transitionDelay: `${products.length * 200}ms` }}>
-            <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
-              </h3>
-              <p className="text-white/70 mb-8 leading-relaxed">
-                Join thousands of businesses already using our AI-powered solutions 
-                to streamline operations and drive growth.
-              </p>
-              <button 
-                onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                }}
-                className="bg-gradient-to-r from-accent-blue to-accent-purple hover:from-accent-blue/90 hover:to-accent-purple/90 text-white px-8 py-3 rounded-lg font-medium transition-all magnetic-btn shadow-lg hover:shadow-xl"
-              >
-                Get Started Today
-              </button>
+        {/* Products Grid */}
+        <div className="space-y-32">
+          {products.map((product, index) => (
+            <div
+              key={product.Id}
+              className={cn(
+                "animate-in-view",
+                hasIntersected && "in-view"
+              )}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <ProductCard
+                product={product}
+                index={index}
+                isReversed={index % 2 === 1}
+              />
             </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className={cn(
+          "text-center mt-20 animate-in-view",
+          hasIntersected && "in-view"
+        )} style={{ transitionDelay: `${products.length * 200}ms` }}>
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-white/70 mb-8 leading-relaxed">
+              Join thousands of businesses already using our AI-powered solutions 
+              to streamline operations and drive growth.
+            </p>
+            <button 
+              onClick={() => {
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
+              className="bg-gradient-to-r from-accent-blue to-accent-purple hover:from-accent-blue/90 hover:to-accent-purple/90 text-white px-8 py-3 rounded-lg font-medium transition-all magnetic-btn shadow-lg hover:shadow-xl"
+            >
+              Get Started Today
+            </button>
           </div>
         </div>
       </div>
