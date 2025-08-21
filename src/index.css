@@ -5,7 +5,7 @@
 
 /* Custom styles */
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +25,38 @@ body {
   border: 1px solid #2D2D2D;
   border-radius: 8px;
   font-size: 14px;
+}
+
+/* Loading Screen Animations */
+@keyframes logo-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.animate-logo-fade-in {
+  animation: logo-fade-in 1s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-logo-pulse {
+  animation: logo-pulse 2s ease-in-out infinite;
 }
 
 .Toastify__toast--success {
