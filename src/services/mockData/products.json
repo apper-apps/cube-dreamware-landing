@@ -1,41 +1,47 @@
 [
-  {
-    "Id": 1,
-    "name": "Integrately",
-    "description": "AI-Powered Automation Platform",
-    "valueProposition": "Connect your apps and automate workflows with intelligent AI assistance",
-    "features": [
-      "Smart workflow automation",
-      "AI-powered integration suggestions",
-      "Real-time data synchronization",
-      "No-code automation builder"
-    ],
-    "icon": "Workflow"
-  },
-  {
-    "Id": 2,
-    "name": "Apper.io",
-    "description": "AI-Powered App Builder",
-    "valueProposition": "Build professional applications without coding using AI assistance",
-    "features": [
-      "Visual app development",
-      "AI code generation",
-      "Real-time collaboration",
-      "One-click deployment"
-    ],
-    "icon": "Smartphone"
-  },
-  {
-    "Id": 3,
-    "name": "AutoTester.ai",
-    "description": "AI-Powered QA Testing",
-    "valueProposition": "Automated quality assurance testing with intelligent bug detection",
-    "features": [
-      "Automated test generation",
-      "Smart bug detection",
-      "Performance monitoring",
-      "Continuous testing integration"
-    ],
-    "icon": "TestTube"
-  }
+{
+"Id": 1,
+"name": "Integrately",
+"description": "AI-Powered Automation Platform",
+"valueProposition": "Connect your apps and automate workflows with intelligent AI assistance. Streamline your business processes without writing a single line of code.",
+"features": [
+"Smart workflow automation",
+"AI-powered integration suggestions",
+"Real-time data synchronization",
+"No-code automation builder"
+],
+"icon": "Workflow",
+"imageUrl": "/images/integrately-hero.jpg",
+"color": "#0EA5E9"
+},
+{
+"Id": 2,
+"name": "Apper.io",
+"description": "AI-Powered App Builder",
+"valueProposition": "Build professional applications without coding using AI assistance. Transform your ideas into fully functional apps in minutes.",
+"features": [
+"Visual app development",
+"AI code generation",
+"Real-time collaboration",
+"One-click deployment"
+],
+"icon": "Smartphone",
+"imageUrl": "/images/apper-hero.jpg",
+"color": "#8B5CF6"
+},
+{
+"Id": 3,
+"name": "AutoTester.ai",
+"description": "AI-Powered QA Testing",
+"valueProposition": "Automated quality assurance testing with intelligent bug detection. Ensure your applications are flawless before they reach your users.",
+"features": [
+"Automated test generation",
+"Smart bug detection",
+"Performance monitoring",
+"Continuous testing integration"
+],
+"icon": "TestTube",
+"imageUrl": "/images/autotester-hero.jpg",
+"color": "#10B981"
+}
 ]

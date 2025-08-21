@@ -3,6 +3,7 @@ import Navigation from "@/components/organisms/Navigation";
 import HeroSection from "@/components/organisms/HeroSection";
 import ComparisonSection from "@/components/organisms/ComparisonSection";
 import ProcessSection from "@/components/organisms/ProcessSection";
+import ProductsSection from "@/components/organisms/ProductsSection";
 import IndustriesSection from "@/components/organisms/IndustriesSection";
 import TestimonialsSection from "@/components/organisms/TestimonialsSection";
 import ContactSection from "@/components/organisms/ContactSection";
@@ -15,9 +16,10 @@ const LandingPage = () => {
       <main>
         <HeroSection />
         <ComparisonSection />
-        <ProcessSection />
-        <IndustriesSection />
-        <TestimonialsSection />
+<ProcessSection />
+<ProductsSection />
+<IndustriesSection />
+<TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
