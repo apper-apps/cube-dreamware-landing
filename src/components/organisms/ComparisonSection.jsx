@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
-import ComparisonRow from "@/components/molecules/ComparisonRow";
-import Card from "@/components/atoms/Card";
+import React, { useEffect, useState } from "react";
 import { landingPageService } from "@/services/api/landingPageService";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import ComparisonRow from "@/components/molecules/ComparisonRow";
+import Card from "@/components/atoms/Card";
 import { cn } from "@/utils/cn";
 
 const ComparisonSection = () => {
   const [comparisonData, setComparisonData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+const [error, setError] = useState("");
   const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
-
   const loadComparisonData = async () => {
     setLoading(true);
     setError("");

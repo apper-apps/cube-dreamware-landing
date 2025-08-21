@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import ProcessStep from "@/components/molecules/ProcessStep";
+import React, { useEffect, useState } from "react";
 import { landingPageService } from "@/services/api/landingPageService";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import ProcessStep from "@/components/molecules/ProcessStep";
 import { cn } from "@/utils/cn";
 
 const ProcessSection = () => {
   const [processSteps, setProcessSteps] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+const [error, setError] = useState("");
   const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
-
+  
   const loadProcessSteps = async () => {
     setLoading(true);
     setError("");

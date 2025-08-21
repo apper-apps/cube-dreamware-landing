@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
-import TestimonialCard from "@/components/molecules/TestimonialCard";
+import React, { useEffect, useState } from "react";
 import { landingPageService } from "@/services/api/landingPageService";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import TestimonialCard from "@/components/molecules/TestimonialCard";
 import { cn } from "@/utils/cn";
 
 const TestimonialsSection = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
+const [currentIndex, setCurrentIndex] = useState(0);
   const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
-
   const loadTestimonials = async () => {
     setLoading(true);
     setError("");

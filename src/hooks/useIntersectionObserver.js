@@ -1,16 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useIntersectionObserver = (options = {}) => {
+export const useIntersectionObserver = (options = {}, sectionIndex = 0) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [hasIntersected, setHasIntersected] = useState(false);
   const ref = useRef(null);
+  const [sectionStaggerDelay] = useState(sectionIndex * 200);
 
-  useEffect(() => {
+useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);
         if (entry.isIntersecting && !hasIntersected) {
-          setHasIntersected(true);
+          // Add section-level stagger delay
+          setTimeout(() => {
+            setHasIntersected(true);
+          }, sectionStaggerDelay);
         }
       },
       {
@@ -30,7 +34,7 @@ export const useIntersectionObserver = (options = {}) => {
         observer.unobserve(currentRef);
       }
     };
-  }, [hasIntersected, options]);
+  }, [hasIntersected, options, sectionStaggerDelay]);
 
-  return [ref, isIntersecting, hasIntersected];
+  return [ref, isIntersecting, hasIntersected, sectionStaggerDelay];
 };

@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
-import IndustryCard from "@/components/molecules/IndustryCard";
+import React, { useEffect, useState } from "react";
 import { landingPageService } from "@/services/api/landingPageService";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import IndustryCard from "@/components/molecules/IndustryCard";
 import { cn } from "@/utils/cn";
 
 const IndustriesSection = () => {
   const [industries, setIndustries] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
-
+const [error, setError] = useState("");
+  const [ref, isIntersecting, hasIntersected] = useIntersectionObserver({}, 2);
   const loadIndustries = async () => {
     setLoading(true);
     setError("");

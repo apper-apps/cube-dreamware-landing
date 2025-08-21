@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
-import ProductCard from "@/components/molecules/ProductCard";
+import React, { useEffect, useState } from "react";
 import { landingPageService } from "@/services/api/landingPageService";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import ProductCard from "@/components/molecules/ProductCard";
 import { cn } from "@/utils/cn";
 
 const ProductsSection = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+const [error, setError] = useState("");
   const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
-
   const loadProducts = async () => {
     setLoading(true);
     setError("");

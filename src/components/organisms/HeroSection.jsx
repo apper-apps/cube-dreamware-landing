@@ -7,7 +7,7 @@ import { cn } from "@/utils/cn";
 
 const HeroSection = () => {
   const [benefitPills, setBenefitPills] = useState([]);
-  const [ref, isIntersecting, hasIntersected] = useIntersectionObserver();
+const [ref, isIntersecting, hasIntersected, sectionStaggerDelay] = useIntersectionObserver({}, 0);
 
   useEffect(() => {
     const loadBenefitPills = async () => {
