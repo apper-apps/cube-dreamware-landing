@@ -2,7 +2,7 @@ import React from "react";
 import ApperIcon from "@/components/ApperIcon";
 import { cn } from "@/utils/cn";
 
-const ComparisonRow = ({ feature, traditional, freelancer, dreamware, className }) => {
+const ComparisonRow = ({ feature, traditional, freelancer, dreamware, type, value, className }) => {
   const CheckIcon = ({ value, isDreamware = false }) => {
     if (value) {
       return (
@@ -18,20 +18,21 @@ const ComparisonRow = ({ feature, traditional, freelancer, dreamware, className 
     return <ApperIcon name="X" size={20} className="text-red-500" />;
   };
 
-  return (
+return (
     <div className={cn(
-      "grid grid-cols-4 gap-4 py-4 border-b border-medium-gray/30 last:border-b-0",
+      "flex items-center justify-between p-3 rounded-lg transition-all duration-200",
+      value ? "bg-green-500/10 border border-green-500/20" : "bg-red-500/10 border border-red-500/20",
+      type === "dreamware" && value && "bg-accent-blue/10 border-accent-blue/20",
       className
     )}>
-      <div className="text-white font-medium">{feature}</div>
-      <div className="flex justify-center">
-        <CheckIcon value={traditional} />
+      <div className={cn(
+        "text-sm font-medium flex-1",
+        type === "dreamware" ? "text-white" : "text-white/80"
+      )}>
+        {feature}
       </div>
-      <div className="flex justify-center">
-        <CheckIcon value={freelancer} />
-      </div>
-      <div className="flex justify-center">
-        <CheckIcon value={dreamware} isDreamware={true} />
+      <div className="flex-shrink-0 ml-3">
+        <CheckIcon value={value} isDreamware={type === "dreamware"} />
       </div>
     </div>
   );

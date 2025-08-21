@@ -50,73 +50,124 @@ const [error, setError] = useState("");
 
   return (
     <section className="py-20 lg:py-32" id="services">
-      <div className="container mx-auto px-5 sm:px-10 lg:px-20">
-        <div 
-          ref={ref}
-          className={cn(
-            "animate-in-view",
-            hasIntersected && "in-view"
-          )}
-        >
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              What Founders Really Want —{" "}
-              <span className="gradient-text">And How Dreamware Delivers It</span>
-            </h2>
-            <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-              Compare traditional development approaches with our AI-powered solution
-            </p>
-          </div>
-
-          {/* Comparison Table */}
-          <div className="max-w-6xl mx-auto">
-            <Card variant="glass" className="overflow-hidden">
-              {/* Table Header */}
-              <div className="grid grid-cols-4 gap-4 pb-6 mb-6 border-b border-medium-gray/50">
-                <div className="text-white/70 font-medium">Feature</div>
-                <div className="text-center text-white/70 font-medium">Traditional</div>
-                <div className="text-center text-white/70 font-medium">Freelancers</div>
-                <div className="text-center font-semibold">
-                  <span className="gradient-text">Dreamware AI</span>
+    <div className="container mx-auto px-5 sm:px-10 lg:px-20">
+        <div ref={ref} className={cn("animate-in-view", hasIntersected && "in-view")}>
+            {/* Section Header */}
+            <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">What Founders Really Want —{" "}
+                    <span className="gradient-text">And How Dreamware Delivers It</span>
+                </h2>
+                <p
+                    className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">See how Dreamware AI delivers what founders truly need for successful software development
+                                </p>
+            </div>
+            {/* Comparison Table */}
+            <div className="max-w-7xl mx-auto">
+                {/* Section Title */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">What Founders Really Want — And How{" "}
+                        <span className="gradient-text">Dreamware Delivers It</span>
+                    </h2>
                 </div>
-              </div>
-
-              {/* Table Rows */}
-              <div className="space-y-0">
-                {comparisonData.map((row, index) => (
-                  <div
-                    key={row.Id}
-                    className={cn(
-                      "animate-in-view",
-                      hasIntersected && "in-view"
-                    )}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <ComparisonRow
-                      feature={row.feature}
-                      traditional={row.traditional}
-                      freelancer={row.freelancer}
-                      dreamware={row.dreamware}
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* Highlight Box */}
-              <div className="mt-8 pt-8 border-t border-medium-gray/30">
-                <div className="bg-gradient-to-r from-accent-blue/20 to-accent-purple/20 border border-accent-blue/30 rounded-lg p-6 text-center">
-                  <p className="text-white font-medium text-lg">
-                    🎯 <strong>Why Choose Dreamware?</strong> We combine the reliability of traditional development 
-                    with the speed of AI and the cost-effectiveness of modern tools.
-                  </p>
+                {/* Comparison Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    {/* Traditional Development Card */}
+                    <Card
+                        variant="glass"
+                        className={cn("animate-in-view border-medium-gray/50", hasIntersected && "in-view")}
+                        style={{
+                            transitionDelay: "0ms"
+                        }}>
+                        <div className="text-center mb-6">
+                            <h3 className="text-xl font-bold text-white mb-2">Traditional Development</h3>
+                            <p className="text-white/60 text-sm">Large agencies & enterprise teams</p>
+                        </div>
+                        <div className="space-y-4">
+                            {comparisonData.map(row => <ComparisonRow
+                                key={`traditional-${row.Id}`}
+                                feature={row.feature}
+                                value={row.traditional}
+                                type="traditional" />)}
+                        </div>
+                    </Card>
+                    {/* Freelancers/Agencies Card */}
+                    <Card
+                        variant="glass"
+                        className={cn("animate-in-view border-medium-gray/50", hasIntersected && "in-view")}
+                        style={{
+                            transitionDelay: "200ms"
+                        }}>
+                        <div className="text-center mb-6">
+                            <h3 className="text-xl font-bold text-white mb-2">Freelancers/Agencies</h3>
+                            <p className="text-white/60 text-sm">Independent contractors & small teams</p>
+                        </div>
+                        <div className="space-y-4">
+                            {comparisonData.map(row => <ComparisonRow
+                                key={`freelancer-${row.Id}`}
+                                feature={row.feature}
+                                value={row.freelancer}
+                                type="freelancer" />)}
+                        </div>
+                    </Card>
+                    {/* Dreamware AI Card */}
+                    <Card
+                        variant="glass"
+                        className={cn(
+                            "animate-in-view border-accent-blue/50 bg-gradient-to-b from-accent-blue/5 to-accent-purple/5 relative",
+                            hasIntersected && "in-view"
+                        )}
+                        style={{
+                            transitionDelay: "400ms",
+                            boxShadow: "0 0 30px rgba(14, 165, 233, 0.15)"
+                        }}>
+                        {/* Glow effect */}
+                        <div
+                            className="absolute inset-0 bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="text-center mb-6">
+                            <h3 className="text-xl font-bold gradient-text mb-2">Dreamware AI</h3>
+                            <p className="text-white/80 text-sm font-medium">AI-powered development platform</p>
+                        </div>
+                        <div className="space-y-4">
+                            {comparisonData.map(row => <ComparisonRow
+                                key={`dreamware-${row.Id}`}
+                                feature={row.feature}
+                                value={row.dreamware}
+                                type="dreamware" />)}
+                        </div>
+                    </Card>
                 </div>
-              </div>
-            </Card>
-          </div>
+                {/* Bottom CTA */}
+                <div
+                    className={cn("text-center animate-in-view", hasIntersected && "in-view")}
+                    style={{
+                        transitionDelay: "600ms"
+                    }}>
+                    <Card variant="gradient" className="max-w-4xl mx-auto border-accent-blue/30">
+                        <div className="text-center">
+                            <h3 className="text-2xl font-bold text-white mb-4">🚀 Ready to Experience the Dreamware Advantage?
+                                                  </h3>
+                            <p className="text-white/80 mb-6 text-lg">Join successful founders who've transformed their development process with AI-powered solutions
+                                                  </p>
+                            <button
+                                onClick={() => {
+                                    const contactSection = document.getElementById("contact");
+
+                                    if (contactSection) {
+                                        contactSection.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start"
+                                        });
+                                    }
+                                }}
+                                className="bg-gradient-to-r from-accent-blue to-accent-purple hover:from-accent-blue/90 hover:to-accent-purple/90 text-white px-8 py-4 rounded-lg font-medium transition-all magnetic-btn shadow-lg hover:shadow-xl text-lg">Start Your Project Today
+                                                  </button>
+                        </div>
+                    </Card>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
   );
 };
 
