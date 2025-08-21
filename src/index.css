@@ -110,9 +110,9 @@ body {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+}
 
 /* Button magnetic effect */
-.magnetic-btn {
 .magnetic-btn {
   transition: transform 0.2s ease;
 }
@@ -120,9 +120,9 @@ body {
 .magnetic-btn:hover {
   transform: scale(1.05);
 }
+
 /* Parallax effects */
 .parallax-float {
-  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
