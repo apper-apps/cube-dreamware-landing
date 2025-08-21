@@ -5,6 +5,7 @@ const Button = forwardRef(({
   className, 
   variant = "primary",
   size = "default",
+  pulse = false,
   children,
   ...props 
 }, ref) => {
@@ -67,7 +68,7 @@ const variants = {
   };
 
 return (
-    <button
+<button
       ref={(node) => {
         buttonRef.current = node;
         if (typeof ref === 'function') ref(node);
@@ -77,6 +78,7 @@ return (
         baseStyles,
         variants[variant],
         sizes[size],
+        pulse && "animate-pulse-soft",
         className
       )}
       {...props}
