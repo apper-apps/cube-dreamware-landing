@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "@/components/pages/LandingPage";
 import LoadingScreen from "@/components/ui/LoadingScreen";
-
+import CookieConsentBanner from "@/components/organisms/CookieConsentBanner";
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
-
   useEffect(() => {
     // Simulate initial loading time
     const timer = setTimeout(() => {
@@ -20,7 +19,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
+return (
     <>
       <LoadingScreen isVisible={isLoading} />
       <div 
@@ -32,6 +31,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
         </Routes>
       </div>
+      {showContent && <CookieConsentBanner />}
     </>
   );
 }
